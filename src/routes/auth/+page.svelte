@@ -169,7 +169,7 @@
 
 <svelte:head>
 	<title>
-		AJUDA DIGITAL - Test Chat Platform
+		AJUDA DIGITAL - Government Assistant
 	</title>
 </svelte:head>
 
@@ -343,7 +343,7 @@
 								</div>
 								<div>
 									<h1 class="text-3xl font-bold bg-gradient-to-r from-red-600 via-red-500 to-orange-500 bg-clip-text text-transparent">AJUDA DIGITAL</h1>
-									<p class="text-sm text-slate-600 dark:text-slate-300 font-medium">Test Chat Platform</p>
+									<p class="text-sm text-slate-600 dark:text-slate-300 font-medium">Government Assistant</p>
 								</div>
 							</div>
 						</div>
@@ -362,15 +362,15 @@
 									{:else if mode === 'ldap'}
 										Sign in with LDAP
 									{:else if mode === 'signin'}
-										Welcome to Test Chat
+										Welcome Back
 									{:else}
-										Create Test Account
+										Create Account
 									{/if}
 								</h2>
 								<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
 									{mode === 'signin' 
-										? 'Experience our AI-powered government assistant' 
-										: 'Create your test account to explore the platform'}
+										? 'Access your AI-powered government assistant' 
+										: 'Create your account to get started'}
 								</p>
 							</div>
 
@@ -421,7 +421,7 @@
 												class="w-full px-4 py-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all shadow-sm"
 												autocomplete="email"
 												name="email"
-												placeholder="demo@ajudadigital.com"
+												placeholder="your@email.com"
 												required
 											/>
 										</div>
@@ -436,7 +436,7 @@
 											type="password"
 											id="password"
 											class="w-full px-4 py-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all shadow-sm"
-											placeholder="ajuda123A@"
+											placeholder="Enter your password"
 											autocomplete={mode === 'signup' ? 'new-password' : 'current-password'}
 											name="password"
 											required
@@ -476,17 +476,17 @@
 											type="submit"
 										>
 											{mode === 'signin'
-												? 'Start Testing'
+												? 'Sign In'
 												: ($config?.onboarding ?? false)
 													? $i18n.t('Create Admin Account')
-													: 'Create Test Account'}
+													: 'Create Account'}
 										</button>
 
 										{#if $config?.features.enable_signup && !($config?.onboarding ?? false)}
 											<div class="mt-8 text-center">
 												<span class="text-sm text-slate-600 dark:text-slate-400">
 													{mode === 'signin'
-														? "Don't have a test account?"
+														? "Don't have an account?"
 														: 'Already have an account?'}
 												</span>
 												<button
@@ -652,24 +652,6 @@
 								</div>
 							{/if}
 						</form>
-
-						<!-- Demo Credentials Notice -->
-						<div class="mt-8 p-5 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border border-amber-200 dark:border-amber-700/50 rounded-2xl shadow-sm">
-							<div class="flex items-start gap-4">
-								<div class="text-amber-600 dark:text-amber-400 mt-0.5 shimmer">
-									<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-										<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
-									</svg>
-								</div>
-								<div class="text-sm">
-									<p class="font-semibold text-amber-800 dark:text-amber-200 mb-2">Quick Test Access</p>
-									<p class="text-amber-700 dark:text-amber-300 leading-relaxed">
-										Email: <code class="bg-amber-100 dark:bg-amber-800/50 px-2 py-1 rounded font-mono text-xs">demo@ajudadigital.com</code><br>
-										Password: <code class="bg-amber-100 dark:bg-amber-800/50 px-2 py-1 rounded font-mono text-xs">ajuda123A@</code>
-									</p>
-								</div>
-							</div>
-						</div>
 					{/if}
 				</div>
 			</div>
@@ -703,56 +685,41 @@
 								</p>
 							</div>
 
-							<!-- Development Notice -->
-							<div class="glass-morphism rounded-xl p-5 border border-white/20 space-y-3">
+							<!-- Service Highlight -->
+							<div class="glass-morphism rounded-xl p-6 border border-white/20 space-y-4">
 								<div class="flex items-center justify-center gap-2">
-									<span class="text-xl">🚧</span>
-									<h2 class="text-base font-bold text-yellow-200">Development in Progress</h2>
+									<span class="text-2xl">🤖</span>
+									<h2 class="text-lg font-bold text-yellow-200">AI-Powered Government Services</h2>
 								</div>
 								<p class="text-white/90 text-sm leading-relaxed">
-									<strong>chat.ajuda-digital.com</strong> is currently under development. 
-									This test platform allows you to explore our AI-powered government services.
+									Access comprehensive government information and services through our intelligent assistant designed specifically for Timor-Leste.
 								</p>
-								<div class="inline-flex items-center gap-2 text-xs text-white/80 bg-white/10 px-3 py-2 rounded-lg">
-									<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-									Test Environment Active
-								</div>
 							</div>
 
 							<!-- Feature Grid -->
 							<div class="grid grid-cols-2 gap-3">
 								<div class="glass-morphism rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all cursor-pointer">
-									<div class="text-2xl mb-2">🤖</div>
-									<div class="text-xs font-semibold">AI Assistants</div>
-									<div class="text-xs text-white/80">Smart government help</div>
-								</div>
-								<div class="glass-morphism rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all cursor-pointer">
-									<div class="text-2xl mb-2">🌍</div>
-									<div class="text-xs font-semibold">Multi-language</div>
-									<div class="text-xs text-white/80">Tetum • Portuguese • English</div>
-								</div>
-								<div class="glass-morphism rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all cursor-pointer">
 									<div class="text-2xl mb-2">📋</div>
-									<div class="text-xs font-semibold">Gov Services</div>
-									<div class="text-xs text-white/80">Certificates • Registration</div>
+									<div class="text-xs font-semibold">10 Departments</div>
+									<div class="text-xs text-white/80">Complete coverage</div>
 								</div>
 								<div class="glass-morphism rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all cursor-pointer">
-									<div class="text-2xl mb-2">🇹🇱</div>
-									<div class="text-xs font-semibold">Made in TL</div>
-									<div class="text-xs text-white/80">Youth innovation</div>
+									<div class="text-2xl mb-2">⚡</div>
+									<div class="text-xs font-semibold">Instant Access</div>
+									<div class="text-xs text-white/80">24/7 availability</div>
 								</div>
 							</div>
 
-							<!-- Bottom Notice -->
+							<!-- Mission Statement -->
 							<div class="glass-morphism border border-blue-400/30 rounded-lg p-4">
 								<div class="flex items-center justify-center gap-2 mb-2">
-									<span class="text-lg">💡</span>
+									<span class="text-lg">🌟</span>
 									<p class="text-sm font-semibold text-blue-200">
-										Exploring Government AI Solutions
+										Democratizing Government Access
 									</p>
 								</div>
 								<p class="text-xs text-blue-100 leading-relaxed">
-									Experience how AI can transform access to government services in Timor-Leste
+									Breaking down barriers between citizens and government services through innovative AI technology
 								</p>
 							</div>
 						</div>
