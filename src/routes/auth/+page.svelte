@@ -29,8 +29,8 @@
 	let form = null;
 
 	let name = '';
-	let email = 'demo@ajudadigital.com';
-	let password = 'ajuda123A@';
+	let email = '';
+	let password = '';
 	let confirmPassword = '';
 
 	let ldapUsername = '';
